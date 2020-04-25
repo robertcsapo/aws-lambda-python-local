@@ -1,0 +1,6 @@
+FROM python:3-slim
+WORKDIR /aws-lambda-python-local/
+COPY / ./
+RUN apt update && apt install -y iproute2
+RUN pip install -r requirements.txt
+ENTRYPOINT ["python", "main.py"]
