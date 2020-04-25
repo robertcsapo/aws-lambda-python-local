@@ -106,7 +106,7 @@ if __name__ == "__main__":
         restart = False
     except ImportError:
         print(" * Warning: lambda_function.py is missing, downloading sample from github")
-        url = "https://raw.githubusercontent.com/robertcsapo/aws-lambda-python-local/master/lambda_function.py"
+        url = "https://raw.githubusercontent.com/robertcsapo/aws-lambda-python-local/master/lambda_function/lambda_function.py"
         response = requests.get(url, allow_redirects=True)
         response.raise_for_status()
         with open(os.getcwd()+"/lambda_function/lambda_function.py", "wb") as f:
@@ -115,7 +115,7 @@ if __name__ == "__main__":
 
     if os.stat(os.getcwd()+"/lambda_function/lambda_function.py").st_size <= 2:
         print(" * Warning: lambda_function.py is empty - downloading sample from github")
-        url = "https://raw.githubusercontent.com/robertcsapo/aws-lambda-python-local/master/lambda_function.py"
+        url = "https://raw.githubusercontent.com/robertcsapo/aws-lambda-python-local/master/lambda_function/lambda_function.py"
         response = requests.get(url, allow_redirects=True)
         response.raise_for_status()
         with open(os.getcwd()+"/lambda_function/lambda_function.py", "wb") as f:
